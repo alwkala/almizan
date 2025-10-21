@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+
+/* Custom brand colors */
+:root {
+  --color-brand-trust-blue: #1E4E8C;
+  --color-growth-green: #28A745;
+  --color-royal-purple: #6A4C93;
+  --color-wealth-gold: #D9A441;
+}
+
+/* Custom styles for enhanced UI/UX */
+body {
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(135deg, #E6E9EE 0%, #FFFFFF 100%);
+  min-height: 100vh;
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E6E9EE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #32C5D2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5BE8EB;
+}
+
+/* Focus styles for accessibility */
+.focus-ring:focus {
+  outline: 2px solid #32C5D2;
+  outline-offset: 2px;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Card background color */
+.card {
+  background-color: #FFFFFF;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-electric-teal hover:bg-bright-cyan text-pure-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 focus-ring;
+}
+
+.btn-secondary {
+  @apply bg-light-gray hover:bg-slate-gray text-dark-charcoal font-semibold py-2 px-4 rounded-lg transition-colors duration-200 focus-ring;
+}
+
+.btn-accent {
+  @apply bg-warm-gold hover:bg-yellow-400 text-dark-charcoal font-semibold py-2 px-4 rounded-lg transition-colors duration-200 focus-ring;
+}
